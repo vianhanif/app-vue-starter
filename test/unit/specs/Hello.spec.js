@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import Hello from '@/components/Hello'
+import Hello from '@/components/Hello/app'
 
-describe('Hello.vue', () => {
+describe('Hello/app.vue', () => {
   it('should render correct contents', () => {
     const Constructor = Vue.extend(Hello)
     const vm = new Constructor().$mount()
