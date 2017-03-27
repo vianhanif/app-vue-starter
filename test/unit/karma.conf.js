@@ -14,8 +14,13 @@ module.exports = function (config) {
     browsers: ['Chrome', 'Firefox', 'Safari'],
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['mocha'],
+    mochaReporter: {
+      output: 'autowatch',
+      showDiff: 'unified',
+    },
+    processKillTimeout: 6000,
     files: ['./index.js'],
-    logLevel: config.LOG_WARN,
+    logLevel: config.LOG_DISABLE,
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
     },
