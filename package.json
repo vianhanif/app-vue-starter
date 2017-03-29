@@ -10,7 +10,10 @@
     "clean": "rm -rf dist/",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
     "test": "npm run unit",
-    "reset": "rm -rf node_modules/ yarn.lock .yarnclean"
+    "reset": "rm -rf node_modules/ yarn.lock .yarnclean",
+    "stage": "git add .",
+    "commit": "git commit -m ",
+    "save": "git push origin"
   },
   "dependencies": {
     "vue": "^2.2.2",
