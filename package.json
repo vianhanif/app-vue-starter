@@ -16,6 +16,7 @@
     "save": "git push origin"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "vue": "^2.2.2",
     "vue-router": "^2.2.0"
   },

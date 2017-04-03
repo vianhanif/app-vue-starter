@@ -11,16 +11,26 @@ module.exports = function (config) {
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
-    browsers: ['Chrome', 'Firefox', 'Safari'],
+    browsers: ['Chrome'],
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['mocha'],
     mochaReporter: {
       output: 'autowatch',
       showDiff: 'unified',
     },
+    browserConsoleLogOptions: {
+      level: 'log'
+    },
+    client: {
+      useIframe: true,
+      captureConsole: true,
+      mocha: {
+        bail: true
+      }
+    },
     processKillTimeout: 6000,
     files: ['./index.js'],
-    logLevel: config.LOG_DISABLE,
+    logLevel: config.LOG_INFO,
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
     },
