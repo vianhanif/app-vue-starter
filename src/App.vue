@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/img/logo.png">
+    <img :src="mainImage">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+    return {
+      mainImage: require('./assets/img/logo.png')
+    }
+  },
 }
 </script>
 
