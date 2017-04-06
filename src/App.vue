@@ -8,6 +8,11 @@
 <script>
 export default {
   name: 'App',
+  head: {
+    title: {
+      inner: 'Home'
+    }
+  },
   data(){
     return {
       mainImage: require('./assets/img/logo.png')
