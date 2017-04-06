@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueHead from 'vue-head'
-import Hello from '@/components/Hello/app.vue'
+import Main from 'page/Main'
+import Page1 from 'page/Page1'
 
 Vue.use(Router)
 Vue.use(VueHead, {
@@ -13,8 +14,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Main',
+      component: Main
+    },
+    {
+      path: '/page1/:name',
+      name: 'Page1',
+      component: Page1
     }
   ]
 })

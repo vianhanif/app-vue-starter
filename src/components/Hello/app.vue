@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
+    <img :src="mainImage">
     <h1 v-on:click="reverseText" v-bind:title="time_message">{{ msg }} {{ name }}</h1>
     <input v-model="name"/>
+    <router-link :to="'/page1/'+name">Go to Page 1 </router-link>
     <h2>Essential Links</h2>
     <ul v-if="seen">
       <li v-for="link in links.essential">
@@ -18,8 +20,6 @@
 </template>
 
 <script>
-import './style.scss'
-
 const app = {
   name: 'Hello',
   methods:{
@@ -32,6 +32,7 @@ const app = {
         name: '',
         msg: 'Welcome to Your Vue.js App',
         time_message: new Date(),
+        mainImage: require('@/assets/img/logo.png'),
         seen: true,
         links: {
           essential:[
@@ -54,3 +55,7 @@ const app = {
 
 export default app;
 </script>
+
+<style lang="scss" scoped>
+  @import "./style.scss"
+</style>
