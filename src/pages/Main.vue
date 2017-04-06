@@ -6,7 +6,7 @@
 import Hello from '@@/Hello/app'
 
 export default {
-  name: 'Page1',
+  name: 'Main',
   head: {
     title: {
       inner: 'Home'
