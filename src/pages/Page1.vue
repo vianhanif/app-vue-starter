@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
     <ul>
-      <li>Page 1, name : <b>{{$route.params.name}}</b></li>
+      <li>Page 1, name : <b>{{$route.params.name || ''}}</b></li>
       <li><router-link to="/">Go to Main Page</router-link></li>
     </ul>
   </div>

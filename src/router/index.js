@@ -21,6 +21,11 @@ export default new Router({
       path: '/page1/:name',
       name: 'Page1',
       component: Page1
+    },
+    {
+      path: '/page1',
+      name: 'Page1',
+      component: Page1
     }
   ]
 })
