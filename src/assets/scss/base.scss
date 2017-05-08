@@ -1,4 +1,6 @@
 @import "./variables";
+@import "./functions";
+@import "./mixins";
 
 h1, h2 {
   font-weight: normal;
@@ -15,6 +17,6 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: tint($secondary, 100%);
+  color: shade($primary, 70%);
   margin-top: 60px;
 }
