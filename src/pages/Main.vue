@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Hello from '@@/Hello/app'
+import Hello from 'components/Hello/app'
 
 export default {
   name: 'Main',

@@ -32,7 +32,7 @@ const app = {
         name: '',
         msg: 'Welcome to Your Vue.js App',
         time_message: new Date(),
-        mainImage: require('@/assets/img/logo.png'),
+        mainImage: require('assets/img/logo.png'),
         seen: true,
         links: {
           essential:[
