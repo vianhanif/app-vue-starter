@@ -28,7 +28,6 @@ export default {
   },
   mounted(){
     const todo = {
-      id: 3,
       title: 'Todo 3',
       description: 'descrition'
     }
@@ -37,17 +36,16 @@ export default {
   methods: {
     addNewTodo(){
       const todo = {
-        id: 3,
-        title: 'Todo 3',
+        title: 'Todo',
         description: 'descrition'
       }
       this.$store.dispatch(action.ADD_TODO,
         { todo,
-          success(){
-            console.log('add todo success')
+          success(response){
+            console.log(response)
           },
-          error(){
-            console.log('add todo failed')
+          error(response){
+            console.log(response)
           }
         }
       )
