@@ -19,7 +19,7 @@ export default new Router({
     },
     {
       path: '/page1/:name',
-      name: 'Page1',
+      name: 'Page1-id',
       component: Page1
     },
     {

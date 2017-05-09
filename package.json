@@ -20,7 +20,8 @@
     "node-gyp": "^3.6.0",
     "vue": "^2.2.2",
     "vue-head": "^2.0.10",
-    "vue-router": "^2.3.1"
+    "vue-router": "^2.3.1",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
