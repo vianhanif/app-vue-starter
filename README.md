@@ -1,6 +1,6 @@
 # app-vue-starter
 
-> Vue App Starter
+> Vue App Starter with Vuex Store Setup Todo Example
 
 ## Build Setup
 

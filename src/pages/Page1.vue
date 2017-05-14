@@ -27,11 +27,11 @@ export default {
     })
   },
   mounted(){
-    const todo = {
-      title: 'Todo 3',
-      description: 'descrition'
-    }
-    this.$store.commit(action.MUTATE_ADD_TODO, todo)
+    // const todo = {
+    //   title: 'Todo 3',
+    //   description: 'descrition'
+    // }
+    // this.$store.commit(action.MUTATE_ADD_TODO, todo)
   },
   methods: {
     addNewTodo(){
