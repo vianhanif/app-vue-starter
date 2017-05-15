@@ -7,13 +7,13 @@
     <h2>Essential Links</h2>
     <ul v-if="seen">
       <li v-for="link in links.essential">
-        <a v-bind:href="link.href" target="_blank">{{link.text}} <slot></slot>    </a>
+        <a v-bind:href="link.href" target="_blank">{{link.text}}</a>
       </li>
     </ul>
     <h2>Ecosystem</h2>
     <ul>
       <li v-for="link in links.ecosystem">
-        <a v-bind:href="link.href" target="_blank">{{link.text}}<slot></slot></a>
+        <a v-bind:href="link.href" target="_blank">{{link.text}}</a>
       </li>
     </ul>
   </div>
