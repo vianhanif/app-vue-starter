@@ -23,10 +23,10 @@ export default {
   },
   computed: {
     ...mapGetters({
-        allTodos: action.GET_TODOS_AS_STRING
+      allTodos: action.GET_TODOS_AS_STRING
     })
   },
-  mounted(){
+  mounted () {
     // const todo = {
     //   title: 'Todo 3',
     //   description: 'descrition'
@@ -34,24 +34,24 @@ export default {
     // this.$store.commit(action.MUTATE_ADD_TODO, todo)
   },
   methods: {
-    addNewTodo(){
+    addNewTodo () {
       const todo = {
         title: 'Todo',
         description: 'descrition'
       }
       this.$store.dispatch(action.ADD_TODO,
         { todo,
-          success(response){
+          success (response) {
             console.log(response)
           },
-          error(response){
+          error (response) {
             console.log(response)
           }
         }
       )
     }
   },
-  data(){
+  data () {
     return {
 
     }

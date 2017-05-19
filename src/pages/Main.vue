@@ -12,7 +12,7 @@ export default {
       inner: 'Home'
     }
   },
-  data(){
+  data () {
     return {
 
     }
