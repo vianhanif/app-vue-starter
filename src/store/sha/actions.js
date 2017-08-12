@@ -5,6 +5,9 @@ export default {
     let {input, count, maxCount, match, lastResult, randomData, possibleChar} = data
     let sha224 = require('js-sha256').sha224
     if (input !== null && input !== '') {
+      if (count === 0) {
+        commit(action.ADD_RANDOM_DATA, input)
+      }
       if (count < maxCount && match !== lastResult.value && input !== lastResult.input) {
         let randomText = () => {
           let text = ''
