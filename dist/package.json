@@ -1,0 +1,10 @@
+{
+ "name": "sha224_tester",
+ "version": "1.0.0",
+ "description": "",
+ "author": "Alvian Rahman Hanif",
+ "private": true,
+ "scripts": {
+   "postinstall": "npm install express"
+ }
+}
