@@ -13,12 +13,14 @@
     "reset": "rm -rf node_modules/ yarn.lock .yarnclean",
     "stage": "git add .",
     "commit": "git commit -m ",
-    "save": "git push origin"
+    "save": "git push origin",
+    "deploy": "git subtree push — prefix dist heroku master"
   },
   "dependencies": {
     "axios": "^0.16.1",
     "es6-promise": "^4.1.1",
     "jquery": "^3.2.1",
+    "js-sha256": "^0.6.0",
     "json-server": "^0.10.0",
     "node-gyp": "^3.6.2",
     "sha1": "^1.1.1",

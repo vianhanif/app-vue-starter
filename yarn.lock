@@ -3557,6 +3557,10 @@ js-beautify@^1.6.3:
     mkdirp "~0.5.0"
     nopt "~3.0.1"
 
+js-sha256@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/js-sha256/-/js-sha256-0.6.0.tgz#7fc3693526c53d39db9daaf63537ed38416aba96"
+
 js-tokens@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.1.tgz#08e9f132484a2c45a30907e9dc4d5567b7f114d7"
