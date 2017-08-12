@@ -92,6 +92,7 @@ export default {
       this.$store.commit(shaAction.SET_MATCH, '')
       this.$store.commit(shaAction.SET_TEST_INPUT, '')
       this.$store.commit(shaAction.RESET_RANDOM_DATA)
+      this.$store.commit(shaAction.RESET_TICK_TIME)
     },
     handleTest () {
       if (this.shaData.loading) {
