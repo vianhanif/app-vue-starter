@@ -43,7 +43,7 @@ export default {
     items: []
   },
   data: {
-    possibleChar: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
+    possibleChar: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_+-=[]{}|;\'\\:",./<>?',
     input: '',
     loading: false,
     count: 0,
