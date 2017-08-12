@@ -5,7 +5,7 @@ export default {
     let {input, count, maxCount, match, lastResult, randomData, possibleChar} = data
     let sha224 = require('js-sha256').sha224
     if (input !== null && input !== '') {
-      if (count < maxCount && match !== lastResult.value && input !== match) {
+      if (count < maxCount && match !== lastResult.value && input !== lastResult.input) {
         let randomText = () => {
           let text = ''
           for (let i = 0; i < input.length; i++) {
