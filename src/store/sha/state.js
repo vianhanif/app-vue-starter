@@ -49,7 +49,10 @@ export default {
     count: 0,
     maxCount: Math.pow(2, (56 / 2)),
     match: '',
-    lastResult: '',
+    lastResult: {
+      input: '',
+      value: ''
+    },
     randomData: []
   },
   time: {
