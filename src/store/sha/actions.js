@@ -11,7 +11,7 @@ export default {
       if (count < maxCount && match !== lastResult.value && input !== lastResult.input) {
         let randomText = () => {
           let text = ''
-          for (let i = 0; i < input.length; i++) {
+          for (let i = 0; i < Math.floor((Math.random() * possibleChar.length) + 1); i++) {
             text += possibleChar.charAt(Math.floor(Math.random() * possibleChar.length))
           }
           return text
