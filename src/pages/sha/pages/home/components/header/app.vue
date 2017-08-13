@@ -69,7 +69,6 @@ export default {
     let time = this.shaTime
     window.setInterval(() => {
       if (data.loading) {
-        console.log(time)
         self.runTest({data, time})
       }
     }, 1)
