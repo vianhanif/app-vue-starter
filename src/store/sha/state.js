@@ -35,13 +35,13 @@ export default {
         align: 'left'
       },
       {
-        text: 'Process',
-        value: 'processId',
+        text: 'Input',
+        value: 'input',
         align: 'left'
       },
       {
         text: 'Output',
-        value: 'outputId',
+        value: 'output',
         align: 'left'
       }
     ],

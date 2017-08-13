@@ -37,8 +37,8 @@ export default {
           commit(action.ADD_TEST_RESULT, {
             count: (count + 1),
             time: _time,
-            processId: _input,
-            outputId: result
+            input: _input,
+            output: result
           })
           if (match !== lastResult.value) {
             commit(action.SET_LAST_RESULT, {

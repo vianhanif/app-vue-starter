@@ -23,8 +23,8 @@
         <template slot="items" scope="props">
           <td class="text-xs-left">{{props.item.count}}</td>
           <td class="text-xs-left">{{props.item.time}}</td>
-          <td class="text-xs-left">{{props.item.processId}}</td>
-          <td class="text-xs-left">{{props.item.outputId}}</td>
+          <td class="text-xs-left">{{props.item.input}}</td>
+          <td class="text-xs-left">{{props.item.output}}</td>
         </template>
       </v-data-table>
     </div>
