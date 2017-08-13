@@ -22,6 +22,7 @@
         >
         <template slot="items" scope="props">
           <td class="text-xs-left">{{props.item.count}}</td>
+          <td class="text-xs-left">{{props.item.time}}</td>
           <td class="text-xs-left">{{props.item.processId}}</td>
           <td class="text-xs-left">{{props.item.outputId}}</td>
         </template>

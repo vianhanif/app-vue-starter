@@ -30,7 +30,7 @@
           Finding Match ({{matchCount}}) : {{shaData.lastResult.input}}
         </p>
         <p class="subheading text-xs-left">
-          Time Elapsed: {{time}}
+          Time Elapsed: {{shaData.lastResult.time}}
         </p>
       </v-flex>
     </v-layout>
@@ -66,9 +66,11 @@ export default {
   mounted () {
     let self = this
     let data = this.shaData
+    let time = this.shaTime
     window.setInterval(() => {
       if (data.loading) {
-        self.runTest(data)
+        console.log(time)
+        self.runTest({data, time})
       }
     }, 1)
     window.setInterval(() => {

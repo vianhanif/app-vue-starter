@@ -1,7 +1,7 @@
 import * as action from 'store/sha/action-types'
 
 export default {
-  [action.RUN_TEST] ({commit}, data) {
+  [action.RUN_TEST] ({commit}, {data, time}) {
     let {input, count, maxCount, match, lastResult, randomData, possibleChar} = data
     let sha224 = require('js-sha256').sha224
     if (input !== null && input !== '') {
@@ -26,16 +26,23 @@ export default {
           return repeated
         }
         let _input = randomText()
+        let {second, minute, hour} = time
+        let _second = String(second).length < 2 ? ('0' + second) : second
+        let _minute = String(minute).length < 2 ? ('0' + minute) : minute
+        let _hour = String(hour).length < 2 ? ('0' + hour) : hour
+        let _time = `${_hour}:${_minute}:${_second}`
         if (!textIsRepeated(_input)) {
           commit(action.ADD_RANDOM_DATA, _input)
           let result = sha224(_input)
           commit(action.ADD_TEST_RESULT, {
             count: (count + 1),
+            time: _time,
             processId: _input,
             outputId: result
           })
           if (match !== lastResult.value) {
             commit(action.SET_LAST_RESULT, {
+              time: _time,
               input: _input,
               value: result
             })

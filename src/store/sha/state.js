@@ -30,6 +30,11 @@ export default {
         value: 'count'
       },
       {
+        text: 'Time',
+        value: 'time',
+        align: 'left'
+      },
+      {
         text: 'Process',
         value: 'processId',
         align: 'left'
@@ -50,6 +55,7 @@ export default {
     maxCount: Math.pow(2, (56 / 2)),
     match: '',
     lastResult: {
+      time: '00:00:00',
       input: '',
       value: ''
     },
