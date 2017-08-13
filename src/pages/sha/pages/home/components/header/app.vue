@@ -30,7 +30,7 @@
           Finding Match ({{matchCount}}) : {{shaData.lastResult.input}}
         </p>
         <p class="subheading text-xs-left">
-          Time Elapsed: {{shaData.lastResult.time}}
+          Time Elapsed: {{time}}
         </p>
       </v-flex>
     </v-layout>
