@@ -24,11 +24,6 @@ export default new Router({
       redirect: '/sha-app/home'
     },
     {
-      path: '/main',
-      name: 'Main',
-      component: require('page/Main')
-    },
-    {
       path: '/sha-app',
       name: 'SHA_APP',
       component: require('page/sha/app'),

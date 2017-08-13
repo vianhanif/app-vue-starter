@@ -1,3 +1,5 @@
+import config from '@/config'
+
 export default {
   app: {
     menus: [
@@ -48,11 +50,11 @@ export default {
     items: []
   },
   data: {
-    possibleChar: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_+-=[]{}|;\'\\:",./<>?',
+    possibleChar: config.app.possibleChar,
     input: '',
     loading: false,
     count: 0,
-    maxCount: Math.pow(2, (56 / 2)),
+    maxCount: Math.pow(2, (config.app.maxCount / 2)),
     match: '',
     lastResult: {
       time: '00:00:00',

@@ -1,4 +1,5 @@
 import * as action from 'store/sha/action-types'
+import config from '@/config'
 
 export default {
   [action.RUN_PROCESS] ({data, app}) {
@@ -44,8 +45,8 @@ export default {
   },
   [action.SET_MATCH] ({data}, value) {
     if (value !== null && value !== '') {
-      let sha224 = require('js-sha256').sha224
-      data.match = sha224(value)
+      let sha = config.app.SHA
+      data.match = sha(value)
     } else {
       data.match = ''
     }
