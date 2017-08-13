@@ -33,7 +33,11 @@ export default {
   },
   [action.RESET_RANDOM_DATA] ({data}) {
     data.randomData = []
-    data.lastResult = ''
+    data.lastResult = {
+      time: '00:00:00',
+      input: '',
+      value: ''
+    }
   },
   [action.SET_LAST_RESULT] ({data}, value) {
     data.lastResult = value
