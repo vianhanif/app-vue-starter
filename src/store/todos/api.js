@@ -14,11 +14,11 @@ export default {
   },
   addTodo (payload, success, error) {
     this.http().post('', payload.todo)
-    .then((response) => {
-      success(response)
-    })
-    .catch((response) => {
-      error(response)
-    })
+      .then((response) => {
+        success(response)
+      })
+      .catch((response) => {
+        error(response)
+      })
   }
 }
