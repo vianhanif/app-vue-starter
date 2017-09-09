@@ -54,6 +54,7 @@ export default {
     value: []
   },
   data: {
+    matched: false,
     possibleChar: config.app.possibleChar,
     input: '',
     loading: false,

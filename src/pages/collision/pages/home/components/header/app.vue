@@ -15,7 +15,8 @@
         @click.native="handleResetTest()">
         Reset Test
       </v-btn>
-      <v-btn class="yellow accent-1" @click.native="handleTest()" :disabled="Sample.length <= 0">
+      <v-btn v-if="!Data.matched"
+      class="yellow accent-1" @click.native="handleTest()" :disabled="Sample.length <= 0">
         {{App.test.btn}}
       </v-btn>
     </v-flex>

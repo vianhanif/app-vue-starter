@@ -70,5 +70,8 @@ export default {
     } else {
       time.second += 1
     }
+  },
+  [action.SET_MATHCED] ({data}, value) {
+    data.matched = value
   }
 }
