@@ -4,7 +4,7 @@ export default (text) => {
   // setup letters into a one line for each possible disk
   let data = () => {
     let val = []
-    'abcdefghijklmnopqrstuvwxyz'.split('').forEach((letter, index) => {
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_+-=[]{}|;\'\\:",./<>?'.split('').forEach((letter, index) => {
       val.push(letter)
     })
     return val
