@@ -1,5 +1,3 @@
-import config from '@/config'
-
 export default {
   app: {
     menus: [
@@ -55,11 +53,11 @@ export default {
   },
   data: {
     matched: false,
-    possibleChar: config.app.possibleChar,
+    possibleChar: '',
     input: '',
     loading: false,
     count: 0,
-    maxCount: Math.pow(2, (config.app.maxCount / 2)),
+    maxCount: 0,
     match: '',
     lastResult: {
       time: '00:00:00',

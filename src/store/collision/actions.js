@@ -3,7 +3,7 @@ import config from '@/config'
 
 export default {
   [action.RUN_TEST] ({commit}, {data, samples, time}) {
-    let {input, count, maxCount, match, matched, lastResult} = data
+    let {input, count, match, matched, lastResult} = data
     let sha = config.app.SHA
     if (input !== null && input !== '' && samples.length > 0 && !matched) {
       if (count < samples.length) {
@@ -28,7 +28,7 @@ export default {
           input: String((match === result)),
           output: result
         })
-        if (count < maxCount && input !== lastResult.input) {
+        if (input !== lastResult.input) {
           commit(action.SET_LAST_RESULT, {
             time: _time,
             input: _input,
