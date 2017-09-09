@@ -1,4 +1,4 @@
-import { scytale, jefferson } from '@/crypto'
+import { jefferson, scytale } from '@/crypto'
 
 export default {
   app: {
