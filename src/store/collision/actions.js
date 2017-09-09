@@ -39,13 +39,12 @@ export default {
               input: match === lastResult.value,
               output: result
             })
-            if (match !== lastResult.value) {
-              commit(action.SET_LAST_RESULT, {
-                time: _time,
-                input: _input,
-                value: result
-              })
-            } else {
+            commit(action.SET_LAST_RESULT, {
+              time: _time,
+              input: _input,
+              value: result
+            })
+            if (match === lastResult.value) {
               commit(action.STOP_PROCESS)
             }
             commit(action.ADD_TEST_COUNT)
