@@ -25,7 +25,7 @@
         <p class="subheading text-xs-left">
           Test Hash :
           <br/>
-          {{Data.match}}
+          {{wrapText(Data.match)}}
         </p>
         <p class="subheading text-xs-left">
           Finding Match ({{matchCount}}) :
@@ -81,6 +81,17 @@ export default {
     }, 1000)
   },
   methods: {
+    wrapText (text) {
+      let _text = ''
+      for (let i = 0; i < text.length; i++) {
+        if (i > 0 && i % 97 === 0) {
+          _text += '\n'
+        } else {
+          _text += text.charAt(i)
+        }
+      }
+      return _text
+    },
     ...mapActions({
       runTest: Action.RUN_TEST,
       stopTest: Action.STOP_TEST
