@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import sha from './sha'
+import collision from './collision'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    sha
+    collision
   }
 })

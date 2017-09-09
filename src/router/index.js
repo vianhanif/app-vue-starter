@@ -17,20 +17,24 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/sha-app'
+      redirect: '/app'
     },
     {
-      path: '/sha-app',
-      redirect: '/sha-app/home'
+      path: '/app',
+      redirect: '/app/home'
     },
     {
-      path: '/sha-app',
-      name: 'SHA_APP',
-      component: require('page/sha/app'),
+      path: '/app',
+      name: 'COLlISION_APP',
+      component: require('page/collision/app'),
       children: [
         {
           path: 'home',
-          component: require('page/sha/pages/home/app')
+          component: require('page/collision/pages/home/app')
+        },
+        {
+          path: 'samples',
+          component: require('page/collision/pages/samples/app')
         }
       ]
     }

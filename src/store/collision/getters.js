@@ -1,4 +1,4 @@
-import * as action from 'store/sha/action-types'
+import * as action from 'store/collision/action-types'
 
 export default {
   [action.SHA_APP] ({app}) {

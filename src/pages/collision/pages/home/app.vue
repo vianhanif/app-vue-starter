@@ -32,7 +32,7 @@
 </template>
 <script>
 import {mapGetters} from 'vuex'
-import * as shaAction from 'store/sha/action-types'
+import * as shaAction from 'store/collision/action-types'
 
 export default {
   name: 'Home',
@@ -52,7 +52,7 @@ export default {
     }
   },
   components: {
-    'home-header': require('page/sha/pages/home/components/header/app')
+    'home-header': require('page/collision/pages/home/components/header/app')
   }
 }
 </script>

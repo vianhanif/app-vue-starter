@@ -1,6 +1,6 @@
 <template>
   <app-drawer
-    title="SHA-224 Tester"
+    title="Collision Tester"
     :menus="shaAppMenus"
     :container='shaAppContainer'
     >
@@ -17,7 +17,7 @@
 </template>
 <script>
 import {mapGetters} from 'vuex'
-import * as shaAction from 'store/sha/action-types'
+import * as shaAction from 'store/collision/action-types'
 
 export default {
   name: 'SHAMain',

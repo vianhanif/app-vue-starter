@@ -5,7 +5,13 @@ export default {
     menus: [
       {
         title: 'Home',
-        icon: 'dashboard'
+        icon: 'dashboard',
+        path: '/'
+      },
+      {
+        title: 'Samples',
+        icon: 'dashboard',
+        path: 'samples'
       }
     ],
     container: {

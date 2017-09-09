@@ -3,7 +3,10 @@
     <v-navigation-drawer absolute persistent light :mini-variant.sync="container.mini" v-model="container.drawer" overflow>
       <v-list class="pt-0" dense>
         <v-divider></v-divider>
-        <v-list-tile v-for="item in menus" :key="item.title">
+        <v-list-tile
+          v-for="item in menus"
+          :key="item.title"
+          @click.native="handleMenu(item.path)">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -28,9 +31,11 @@
 export default {
   name: 'AppDrawer',
   props: ['container', 'menus', 'title'],
-  data: () => ({
-
-  })
+  methods: {
+    handleMenu (path) {
+      this.$router.push(path)
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

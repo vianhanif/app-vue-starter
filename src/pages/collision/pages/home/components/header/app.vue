@@ -1,13 +1,13 @@
 <template>
   <v-layout row wrap>
     <v-flex xs4>
-      <v-text-field
+      <!-- <v-text-field
         name="testInput"
         label="Sample Data"
         @input.native="handleInput"
         :value="shaData.input"
         :disabled="shaData.loading || shaTable.items.length > 0"
-        single-line/>
+        single-line/> -->
     </v-flex>
     <v-flex xs8>
       <v-btn class="yellow accent-1"
@@ -38,7 +38,7 @@
 </template>
 <script>
 import {mapGetters, mapActions} from 'vuex'
-import * as shaAction from 'store/sha/action-types'
+import * as shaAction from 'store/collision/action-types'
 import Global from '@/mixins/global'
 
 export default {
