@@ -28,7 +28,9 @@
           {{Data.match}}
         </p>
         <p class="subheading text-xs-left">
-          Finding Match ({{matchCount}}) : {{Data.lastResult.input}}
+          Finding Match ({{matchCount}}) :
+          <br/>
+          {{Data.lastResult.input}}
         </p>
       </v-flex>
     </v-layout>
