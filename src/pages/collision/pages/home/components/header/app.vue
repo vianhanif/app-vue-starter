@@ -3,7 +3,7 @@
     <v-flex xs10>
       <v-text-field
         name="testInput"
-        label="Sample Data"
+        label="Test Data"
         @input.native="handleInput"
         :value="Data.input"
         :disabled="Data.loading || Table.items.length > 0"
