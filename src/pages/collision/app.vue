@@ -1,6 +1,6 @@
 <template>
   <app-drawer
-    title="Collision Tester"
+    :title="title"
     :menus="AppMenus"
     :container='AppContainer'
     >
@@ -18,6 +18,7 @@
 <script>
 import {mapGetters} from 'vuex'
 import * as Action from 'store/collision/action-types'
+import config from '@/config'
 
 export default {
   name: 'SHAMain',
@@ -26,6 +27,11 @@ export default {
       AppMenus: Action.APP_MENUS,
       AppContainer: Action.APP_CONTAINER
     })
+  },
+  data () {
+    return {
+      title: config.app.title
+    }
   },
   components: {
     'app-drawer': require('components/AppDrawer/app')

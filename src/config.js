@@ -1,7 +1,12 @@
+import { scytale, jefferson } from '@/crypto'
+
 export default {
   app: {
+    title: 'Collision Tester - Jefferson(Scytale(DATA))',
     possibleChar: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_+-=[]{}|;\'\\:",./<>?',
     maxCount: 56,
-    SHA: require('js-sha256').sha224
+    SHA (text) {
+      return jefferson(scytale(text))
+    }
   }
 }
