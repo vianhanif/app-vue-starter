@@ -28,6 +28,7 @@ export default (text) => {
   // shift all disk together on shifter size, thus generatng a new random word
   disks.forEach((item, index) => {
     let position = () => {
+      // make sure the shifter roll the disk correctly
       if (item.position + shifter >= item.disk.length) {
         return (item.position + shifter) % item.disk.length
       } else {
