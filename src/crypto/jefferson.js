@@ -1,10 +1,11 @@
 export default (text) => {
+  let possibleTokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_+-=[]{}|;\'\\:",./<>?'
   let result = ''
 
   // setup letters into a one line for each possible disk
   let data = () => {
     let val = []
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_+-=[]{}|;\'\\:",./<>?'.split('').forEach((letter, index) => {
+    possibleTokens.split('').forEach((letter, index) => {
       val.push(letter)
     })
     return val
