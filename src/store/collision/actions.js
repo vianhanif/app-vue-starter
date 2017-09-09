@@ -6,7 +6,7 @@ export default {
     let {input, count, maxCount, match, matched, lastResult} = data
     let sha = config.app.SHA
     if (input !== null && input !== '' && samples.length > 0 && !matched) {
-      if (count <= samples.length) {
+      if (count < samples.length) {
         if (count === 0) {
           commit(action.ADD_RANDOM_DATA, input)
         }
@@ -38,6 +38,8 @@ export default {
         } else {
           commit(action.STOP_PROCESS)
         }
+      } else {
+        commit(action.STOP_PROCESS)
       }
     } else {
       commit(action.STOP_PROCESS)

@@ -13,9 +13,9 @@
       <v-btn class="yellow accent-1"
         v-if="Table.items.length > 0 && !Data.loading"
         @click.native="handleResetTest()">
-        Reset Test
+        Reset
       </v-btn>
-      <v-btn v-if="!Data.matched"
+      <v-btn v-if="!Data.matched && Data.count < Sample.length"
       class="yellow accent-1" @click.native="handleTest()" :disabled="Sample.length <= 0">
         {{App.test.btn}}
       </v-btn>
@@ -94,6 +94,7 @@ export default {
       this.$store.commit(Action.SET_TEST_INPUT, '')
       this.$store.commit(Action.RESET_RANDOM_DATA)
       this.$store.commit(Action.RESET_TICK_TIME)
+      this.$store.commit(Action.SET_MATHCED, false)
     },
     handleTest () {
       if (this.Data.loading) {
