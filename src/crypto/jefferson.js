@@ -1,5 +1,5 @@
 export default (text) => {
-  let possibleTokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_+-=[]{}|;\'\\:",./<>?'
+  let possibleTokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_ +-=[]{}|;\'\\:",./<>?'
   let result = ''
 
   // setup letters into a one line for each possible disk

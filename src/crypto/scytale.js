@@ -12,7 +12,7 @@ export default (text) => {
   _side = 0
 
   // starting rolling each letter to each side as if rolling a long paper at sideSize block
-  text.replace(/\s/g, '').split('').forEach((token, index) => {
+  text.split('').forEach((token, index) => {
     sides[_side].push(token)
     _side++
     if (_side >= sideSize) {
