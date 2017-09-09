@@ -1,8 +1,8 @@
 <template>
   <app-drawer
     title="Collision Tester"
-    :menus="shaAppMenus"
-    :container='shaAppContainer'
+    :menus="AppMenus"
+    :container='AppContainer'
     >
     <v-layout row wrap>
       <v-flex xs10 offset-xs1 md6 offset-md3>
@@ -17,14 +17,14 @@
 </template>
 <script>
 import {mapGetters} from 'vuex'
-import * as shaAction from 'store/collision/action-types'
+import * as Action from 'store/collision/action-types'
 
 export default {
   name: 'SHAMain',
   computed: {
     ...mapGetters({
-      shaAppMenus: shaAction.SHA_APP_MENUS,
-      shaAppContainer: shaAction.SHA_APP_CONTAINER
+      AppMenus: Action.APP_MENUS,
+      AppContainer: Action.APP_CONTAINER
     })
   },
   components: {

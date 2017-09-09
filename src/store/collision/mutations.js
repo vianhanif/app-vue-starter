@@ -2,6 +2,9 @@ import * as action from 'store/collision/action-types'
 import config from '@/config'
 
 export default {
+  [action.ADD_SAMPLE] ({samples}, value) {
+    samples.value.push(value)
+  },
   [action.RUN_PROCESS] ({data, app}) {
     data.loading = true
     app.test.btn = 'Stop'

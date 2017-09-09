@@ -1,22 +1,25 @@
 import * as action from 'store/collision/action-types'
 
 export default {
-  [action.SHA_APP] ({app}) {
+  [action.APP] ({app}) {
     return app
   },
-  [action.SHA_APP_MENUS] ({app}) {
+  [action.APP_MENUS] ({app}) {
     return app.menus
   },
-  [action.SHA_APP_CONTAINER] ({app}) {
+  [action.APP_CONTAINER] ({app}) {
     return app.container
   },
-  [action.SHA_TABLE] ({table}) {
+  [action.TABLE] ({table}) {
     return table
   },
-  [action.SHA_DATA] ({data}) {
+  [action.DATA] ({data}) {
     return data
   },
-  [action.SHA_TIME_ELAPSED] ({time}) {
+  [action.TIME_ELAPSED] ({time}) {
     return time
+  },
+  [action.SAMPLES] ({samples}) {
+    return samples.value
   }
 }

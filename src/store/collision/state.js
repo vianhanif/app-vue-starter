@@ -38,12 +38,7 @@ export default {
         value: 'count'
       },
       {
-        text: 'Time',
-        value: 'time',
-        align: 'left'
-      },
-      {
-        text: 'Input',
+        text: 'Match',
         value: 'input',
         align: 'left'
       },
@@ -54,6 +49,9 @@ export default {
       }
     ],
     items: []
+  },
+  samples: {
+    value: []
   },
   data: {
     possibleChar: config.app.possibleChar,

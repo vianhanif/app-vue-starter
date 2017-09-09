@@ -1,22 +1,22 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs4>
-      <!-- <v-text-field
+    <v-flex xs10>
+      <v-text-field
         name="testInput"
         label="Sample Data"
         @input.native="handleInput"
-        :value="shaData.input"
-        :disabled="shaData.loading || shaTable.items.length > 0"
-        single-line/> -->
+        :value="Data.input"
+        :disabled="Data.loading || Table.items.length > 0"
+        multi-line/>
     </v-flex>
-    <v-flex xs8>
+    <v-flex xs2>
       <v-btn class="yellow accent-1"
-        v-if="shaTable.items.length > 0 && !shaData.loading"
+        v-if="Table.items.length > 0 && !Data.loading"
         @click.native="handleResetTest()">
         Reset Test
       </v-btn>
-      <v-btn class="yellow accent-1" @click.native="handleTest()">
-        {{shaApp.test.btn}}
+      <v-btn class="yellow accent-1" @click.native="handleTest()" :disabled="Sample.length <= 0">
+        {{App.test.btn}}
       </v-btn>
     </v-flex>
     <v-layout row wrap>
@@ -24,13 +24,10 @@
         <p class="subheading text-xs-left">
           Test Hash :
           <br/>
-          {{shaData.match}}
+          {{Data.match}}
         </p>
         <p class="subheading text-xs-left">
-          Finding Match ({{matchCount}}) : {{shaData.lastResult.input}}
-        </p>
-        <p class="subheading text-xs-left">
-          Time Elapsed: {{time}}
+          Finding Match ({{matchCount}}) : {{Data.lastResult.input}}
         </p>
       </v-flex>
     </v-layout>
@@ -38,7 +35,7 @@
 </template>
 <script>
 import {mapGetters, mapActions} from 'vuex'
-import * as shaAction from 'store/collision/action-types'
+import * as Action from 'store/collision/action-types'
 import Global from '@/mixins/global'
 
 export default {
@@ -46,61 +43,63 @@ export default {
   mixins: [Global],
   computed: {
     ...mapGetters({
-      shaData: shaAction.SHA_DATA,
-      shaApp: shaAction.SHA_APP,
-      shaTable: shaAction.SHA_TABLE,
-      shaTime: shaAction.SHA_TIME_ELAPSED
+      Data: Action.DATA,
+      App: Action.APP,
+      Table: Action.TABLE,
+      Time: Action.TIME_ELAPSED,
+      Sample: Action.SAMPLES
     }),
     time () {
-      let {second, minute, hour} = this.shaTime
+      let {second, minute, hour} = this.Time
       let _second = String(second).length < 2 ? ('0' + second) : second
       let _minute = String(minute).length < 2 ? ('0' + minute) : minute
       let _hour = String(hour).length < 2 ? ('0' + hour) : hour
       return `${_hour}:${_minute}:${_second}`
     },
     matchCount () {
-      let {count, maxCount} = this.shaData
-      return `${this.delimeter(count)} / ${this.delimeter(maxCount)}`
+      let {count} = this.Data
+      return `${this.delimeter(count)} / ${this.delimeter(this.Sample.length)}`
     }
   },
   mounted () {
     let self = this
-    let data = this.shaData
-    let time = this.shaTime
+    let data = this.Data
+    let time = this.Time
+    let samples = this.Sample
     window.setInterval(() => {
       if (data.loading) {
-        self.runTest({data, time})
+        self.runTest({data, samples, time})
       }
     }, 1)
     window.setInterval(() => {
       if (data.loading) {
-        self.$store.commit(shaAction.TICK_TIME)
+        self.$store.commit(Action.TICK_TIME)
       }
     }, 1000)
   },
   methods: {
     ...mapActions({
-      runTest: shaAction.RUN_TEST,
-      stopTest: shaAction.STOP_TEST
+      runTest: Action.RUN_TEST,
+      stopTest: Action.STOP_TEST
     }),
     handleInput (e) {
-      this.$store.commit(shaAction.SET_TEST_INPUT, e.target.value)
-      this.$store.commit(shaAction.SET_MATCH, e.target.value)
+      this.$store.commit(Action.SET_TEST_INPUT, e.target.value)
+      this.$store.commit(Action.SET_MATCH, e.target.value)
     },
     handleResetTest () {
-      this.$store.commit(shaAction.RESET_TEST_COUNT)
-      this.$store.commit(shaAction.CLEAR_TEST_DATA)
-      this.$store.commit(shaAction.SET_MATCH, '')
-      this.$store.commit(shaAction.SET_TEST_INPUT, '')
-      this.$store.commit(shaAction.RESET_RANDOM_DATA)
-      this.$store.commit(shaAction.RESET_TICK_TIME)
+      this.$store.commit(Action.RESET_TEST_COUNT)
+      this.$store.commit(Action.CLEAR_TEST_DATA)
+      this.$store.commit(Action.SET_MATCH, '')
+      this.$store.commit(Action.SET_TEST_INPUT, '')
+      this.$store.commit(Action.RESET_RANDOM_DATA)
+      this.$store.commit(Action.RESET_TICK_TIME)
     },
     handleTest () {
-      if (this.shaData.loading) {
+      if (this.Data.loading) {
         this.stopTest()
       } else {
-        if (this.shaData.input !== null && this.shaData.input !== '') {
-          this.$store.commit(shaAction.RUN_PROCESS)
+        if (this.Data.input !== null && this.Data.input !== '') {
+          this.$store.commit(Action.RUN_PROCESS)
         }
       }
     }
