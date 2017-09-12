@@ -1,7 +1,7 @@
-import * as types from './action-types'
+import * as getter from './type/getters'
 
 export default {
-  [types.GET_TODOS_AS_STRING] (state) {
+  [getter.GET_TODOS_AS_STRING] (state) {
     return JSON.stringify(state.list)
   }
 }

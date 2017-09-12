@@ -1,22 +1,23 @@
-import * as types from './action-types'
+import * as mutation from './type/mutations'
 
 export default {
-  [types.REQUEST_ADD_TODO] (state) {
-    state.status = types.STATUS_LOADING
+  [mutation.REQUEST_ADD_TODO] (state) {
+    state.status = 'Loading'
   },
-  [types.ADD_TODO_SUCCESS] (state, {payload, response}) {
+  [mutation.ADD_TODO_SUCCESS] (state, {payload, response}) {
+    console.log(payload)
     let { todo, success } = payload
     todo.id = state.list.length + 1
     state.list.push(todo)
-    state.status = types.STATUS_FINISH
+    state.status = 'Finish'
     success(response)
   },
-  [types.ADD_TODO_FAILURE] (state, {payload, response}) {
+  [mutation.ADD_TODO_FAILURE] (state, {payload, response}) {
     let { error } = payload
-    state.status = types.STATUS_FINISH
+    state.status = 'Finish'
     error(response)
   },
-  [types.MUTATE_ADD_TODO] (state, todo) {
+  [mutation.MUTATE_ADD_TODO] (state, todo) {
     todo.id = state.list.length + 1
     state.list.push(todo)
   }

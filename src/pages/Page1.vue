@@ -3,16 +3,21 @@
     <ul>
       <li>Page 1, name : <b>{{$route.params.name || ''}}</b></li>
       <li><router-link to="/">Go to Main Page</router-link></li>
-      <li><button type="button" @click="addNewTodo">add</button></li>
+      <li>
+        <button type="button" @click="ADD_TODO({ todo, addTodoSuccess, addTodoFailure })">
+          add
+        </button>
+      </li>
       <li>{{$store.state.todos.status}}</li>
-      <li>{{ allTodos }}</li>
+      <li>{{ GET_TODOS_AS_STRING }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import * as action from 'store/todos/action-types'
+import { mapGetters, mapActions } from 'vuex'
+import * as getters from 'store/todos/type/getters'
+import * as actions from 'store/todos/type/actions'
 
 export default {
   name: 'Page1',
@@ -22,38 +27,23 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({
-      allTodos: action.GET_TODOS_AS_STRING
-    })
-  },
-  mounted () {
-    // const todo = {
-    //   title: 'Todo 3',
-    //   description: 'descrition'
-    // }
-    // this.$store.commit(action.MUTATE_ADD_TODO, todo)
+    ...mapGetters({ ...getters })
   },
   methods: {
-    addNewTodo () {
-      const todo = {
-        title: 'Todo',
-        description: 'descrition'
-      }
-      this.$store.dispatch(action.ADD_TODO,
-        { todo,
-          success (response) {
-            console.log(response)
-          },
-          error (response) {
-            console.log(response)
-          }
-        }
-      )
+    ...mapActions({ ...actions }),
+    addTodoSuccess (response) {
+      console.log(response)
+    },
+    addTodoFailure (response) {
+      console.log(response)
     }
   },
   data () {
     return {
-
+      todo: {
+        title: 'Todo',
+        description: 'description'
+      }
     }
   }
 }

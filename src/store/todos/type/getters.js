@@ -1,0 +1,1 @@
+export const GET_TODOS_AS_STRING = 'GET_TODOS_AS_STRING'

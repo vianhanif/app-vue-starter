@@ -1,10 +1,11 @@
 
-import * as types from './action-types'
+import * as action from './type/actions'
+import * as mutation from './type/mutations'
 // import api from './api'
 
 export default {
-  [types.ADD_TODO] ({ commit }, payload) {
-    commit(types.REQUEST_ADD_TODO)
+  [action.ADD_TODO] ({ commit }, payload) {
+    commit(mutation.REQUEST_ADD_TODO)
     // example using API method
     // api.addTodo(payload,
     //   (response) => {
@@ -16,7 +17,7 @@ export default {
     // )
     setTimeout(() => {
       let response = 'api response'
-      commit(types.ADD_TODO_SUCCESS, { payload, response })
+      commit(mutation.ADD_TODO_SUCCESS, { payload, response })
     }, 700)
   }
 }
