@@ -2,7 +2,7 @@
   <div>
     <v-text-field
       name="testInput"
-      label="Sample Data"
+      label="Enter Sample (ex:/ data 1)"
       v-model="value"
       :disabled="Data.loading || Table.items.length > 0"
       multi-line/>

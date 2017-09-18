@@ -23,12 +23,12 @@
     <v-layout row wrap>
       <v-flex xs12>
         <p class="subheading text-xs-left">
-          Test Hash :
+          <b>Hash :</b>
           <br/>
           {{wrapText(Data.match)}}
         </p>
         <p class="subheading text-xs-left">
-          Finding Match ({{matchCount}}) :
+          <b>Sample ({{matchCount}}) : {{Data.matched ? '(Match found)' : ''}}</b>
           <br/>
           {{Data.lastResult.input}}
         </p>
