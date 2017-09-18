@@ -12,7 +12,7 @@
             <li>Insert data samples. click (<v-icon>menu</v-icon>), then select "Samples"</li>
             <li>In "Samples" page, enter sample data as much as you want. (all data here will be used for collision test)</li>
             <li>After finish, you can go back to main page. click (<v-icon>menu</v-icon>), then select "Home"</li>
-            <li>In this state, you have several sample data to test with. Now, Enter the data you want to test in the form "Test Data". You will see the resulting hash it generates on "Hash Result".</li>
+            <li>In this state, you have several sample data to test with. Now, Enter the data you want to test in the form "Test Data". You will see the resulting hash it generates on "Hash :".</li>
             <li>Next, click "Run" to start the test. This action will test your data whether your data has any collision with any of your samples.</li>
             <li>You will see a notice saying "Match found" if there is a match. This means the data has a collision.</li>
             <li>You can reset your test anytime by clicking "Reset"</li>
