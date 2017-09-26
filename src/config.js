@@ -1,10 +1,10 @@
-import { jefferson, scytale } from '@/crypto'
+import { jefferson, scytale, railFence } from '@/crypto'
 
 export default {
   app: {
-    title: 'Collision Tester - Jefferson(Scytale(DATA))',
+    title: 'Collision Tester - RailFence(Jefferson(Scytale(DATA)))',
     SHA (text) {
-      return jefferson(scytale(text))
+      return railFence(jefferson(scytale(text)))
     }
   }
 }
