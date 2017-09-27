@@ -1,10 +1,14 @@
-import { jefferson, scytale, railFence } from '@/crypto'
+import { encrypt } from '@/crypto'
 
 export default {
   app: {
     title: 'Collision Tester - RailFence(Jefferson(Scytale(DATA)))',
     SHA (text) {
-      return railFence(jefferson(scytale(text)))
+      return encrypt([
+        'scytale',
+        'jefferson',
+        'railFence'
+      ], text)
     }
   }
 }
