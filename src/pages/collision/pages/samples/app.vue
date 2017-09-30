@@ -14,7 +14,7 @@
           v-for="(item, index) in Sample"
           :key="index">
           <v-card-text class="text-xs-left elevation-4">
-            <pre>{{wrapText(item)}}</pre>
+            <div style="word-wrap: break-word;">{{item}}</div>
           </v-card-text>
         </v-flex>
       </v-layout>
@@ -34,17 +34,6 @@ export default {
     })
   },
   methods: {
-    wrapText (text) {
-      let _text = ''
-      for (let i = 0; i < text.length; i++) {
-        if (i > 0 && i % 35 === 0) {
-          _text += '\n'
-        } else {
-          _text += text.charAt(i)
-        }
-      }
-      return _text
-    },
     handleTest () {
       this.$store.commit(Action.ADD_SAMPLE, this.value)
       this.value = ''

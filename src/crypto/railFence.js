@@ -53,8 +53,6 @@ export const decrypt = (text) => {
 
   assignLetters(text, table, offset, fixLetter)
 
-  console.log(table)
-
   let position = 0
   text.split('').forEach((letter) => {
     table.forEach((row, i) => {

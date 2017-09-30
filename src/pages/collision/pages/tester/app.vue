@@ -32,7 +32,7 @@
     <v-flex xs12>
       <v-card-text class="text-xs-left">
         <h6><b>Output : </b></h6>
-        <h6>
+        <h6 style="word-wrap: break-word;">
           {{cryptoResult}}
         </h6>
       </v-card-text>
@@ -50,24 +50,13 @@ export default {
         this.cryptor,
         this.input.value
       )
-      return this.wrapText(result)
+      return result
     }
   },
   methods: {
     handleInput (e) {
       this.input.value = e.target.value
       this.output.value = this.input.value
-    },
-    wrapText (text) {
-      let _text = ''
-      for (let i = 0; i < text.length; i++) {
-        if (i > 0 && i % 70 === 0) {
-          _text += '\n'
-        } else {
-          _text += text.charAt(i)
-        }
-      }
-      return _text
     }
   },
   data () {

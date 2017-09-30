@@ -22,7 +22,7 @@
     </v-flex>
     <v-layout row wrap>
       <v-flex xs12>
-        <p class="subheading text-xs-left">
+        <p class="subheading text-xs-left" style="word-wrap: break-word;">
           <b>Hash :</b>
           <br/>
           {{wrapText(Data.match)}}
