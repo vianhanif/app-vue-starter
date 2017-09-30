@@ -29,7 +29,6 @@ export const encrypt = (text) => {
   rollLetters(text, sides, sideSize)
 
   // combine all side shown letters into one word
-  console.log(sides)
   sides.forEach((side, index) => {
     result += side.join('')
   })

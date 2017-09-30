@@ -6,7 +6,7 @@
     >
     <v-layout row wrap>
       <v-flex xs10 offset-xs1 md6 offset-md3>
-        <p>
+        <p v-if="$route.path === '/app/home' || $route.path === '/app/samples'">
           Instructions for First Time Use:
           <ol>
             <li>Insert data samples. click (<v-icon>menu</v-icon>), then select "Samples"</li>

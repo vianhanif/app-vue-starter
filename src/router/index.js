@@ -35,6 +35,10 @@ export default new Router({
         {
           path: 'samples',
           component: require('page/collision/pages/samples/app')
+        },
+        {
+          path: 'tester',
+          component: require('page/collision/pages/tester/app')
         }
       ]
     }

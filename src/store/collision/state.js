@@ -10,6 +10,11 @@ export default {
         title: 'Samples',
         icon: 'dashboard',
         path: 'samples'
+      },
+      {
+        title: 'Encrypt/Decrypt',
+        icon: 'dashboard',
+        path: 'tester'
       }
     ],
     container: {
