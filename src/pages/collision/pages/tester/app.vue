@@ -21,13 +21,13 @@
       </v-radio-group>
     </v-flex>
     <v-flex xs3>
-      <v-checkbox label="Scytale" v-model="cryptor" value="scytale"/>
+      <v-checkbox label="Scytale X" v-model="cryptor" value="scytale"/>
     </v-flex>
     <v-flex xs3>
-      <v-checkbox label="Jefferson" v-model="cryptor" value="jefferson"/>
+      <v-checkbox label="Jefferson X" v-model="cryptor" value="jefferson"/>
     </v-flex>
     <v-flex xs3>
-      <v-checkbox label="Rail Fence" v-model="cryptor" value="railFence"/>
+      <v-checkbox label="Rail Fence X" v-model="cryptor" value="railFence"/>
     </v-flex>
     <v-flex xs12>
       <v-card-text class="text-xs-left">
