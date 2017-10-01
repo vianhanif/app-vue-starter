@@ -1,68 +1,35 @@
-const sideSize = 5
-
-// initialize each side block
-const initialize = (sides, size) => {
-  let side = 0
-  while (side < size) {
-    sides.push([])
-    side++
-  }
-}
-
-// starting rolling each letter to each side as if rolling a long paper at sideSize block
-const rollLetters = (text, sides, size) => {
-  let side = 0
-  text.split('').forEach((letter, index) => {
-    sides[side].push(letter)
-    side++
-    if (side >= size) {
-      side = 0
-    }
-  })
-}
+const column = 5
 
 export const encrypt = (text) => {
+  let token = text.split('')
+  let rows = token.length / column
   let result = ''
-  let sides = []
 
-  initialize(sides, sideSize)
-  rollLetters(text, sides, sideSize)
-
-  // combine all side shown letters into one word
-  sides.forEach((side, index) => {
-    result += side.join('')
-  })
+  for (let i = 0; i < column; i++) {
+    for (let j = 0; j < rows; j++) {
+      if ((j * column) + i < (token.length)) {
+        result = result + token[(j * column) + i]
+      } else {
+        result = result + '*'
+      }
+    }
+  }
   return result
 }
 
 export const decrypt = (text) => {
+  let token = text.split('')
+  let rows = token.length / column
   let result = ''
-  let letters = text.split('')
-  let sides = []
 
-  initialize(sides, sideSize)
-
-  let position = 0
-
-  sides.forEach((side) => {
-    let count = 1
-    while (position < letters.length && count < sideSize) {
-      side.push(letters[position])
-      position++
-      count++
-    }
-    count = 0
-  })
-
-  position = 0
-
-  while (position < sideSize) {
-    sides.forEach((side) => {
-      if (position < side.length) {
-        result += side[position]
+  for (let j = 0; j < rows; j++) {
+    for (let i = 0; i < column; i++) {
+      if ((j * column) + i < (token.length)) {
+        result = result + token[(i * rows) + j]
+      } else {
+        result = result + '*'
       }
-    })
-    position++
+    }
   }
 
   return result
