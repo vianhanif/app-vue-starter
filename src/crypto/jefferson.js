@@ -1,4 +1,4 @@
-const possibleTokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_ +-=[]{}|;\'\\:",./<>?'
+const possibleTokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789` !@#$%^&*()_ +-=/[]{}|;\'\\:",.<>?'
 const shifter = 5
 // setup letters into a one line for each possible disk
 const data = () => {

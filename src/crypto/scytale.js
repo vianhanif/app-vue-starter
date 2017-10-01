@@ -10,7 +10,7 @@ export const encrypt = (text) => {
       if ((j * column) + i < (token.length)) {
         result = result + token[(j * column) + i]
       } else {
-        result = result + '*'
+        result = result + '~'
       }
     }
   }
@@ -27,7 +27,7 @@ export const decrypt = (text) => {
       if ((j * column) + i < (token.length)) {
         result = result + token[(i * rows) + j]
       } else {
-        result = result + '*'
+        result = result + '~'
       }
     }
   }

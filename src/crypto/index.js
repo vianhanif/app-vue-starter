@@ -18,7 +18,7 @@ export const encrypt = (args = [], text) => {
 
 export const decrypt = (args = [], text) => {
   let result = text
-  args.forEach((item) => {
+  args.reverse().forEach((item) => {
     result = crypto[item].decrypt(result)
   })
   return result
