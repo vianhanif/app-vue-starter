@@ -5,9 +5,9 @@ export default {
     title: 'Collision Tester - SJR(DATA)',
     SHA (text) {
       return encrypt([
+        'scytale',
         'jefferson',
-        'railFence',
-        'scytale'
+        'railFence'
       ], text)
     }
   }
