@@ -26,19 +26,19 @@ export default new Router({
     {
       path: '/app',
       name: 'COLlISION_APP',
-      component: require('page/collision/app'),
+      component: require('page/collision/app').default,
       children: [
         {
           path: 'home',
-          component: require('page/collision/pages/home/app')
+          component: require('page/collision/pages/home/app').default
         },
         {
           path: 'samples',
-          component: require('page/collision/pages/samples/app')
+          component: require('page/collision/pages/samples/app').default
         },
         {
           path: 'tester',
-          component: require('page/collision/pages/tester/app')
+          component: require('page/collision/pages/tester/app').default
         }
       ]
     }

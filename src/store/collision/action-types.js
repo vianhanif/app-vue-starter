@@ -1,6 +1,7 @@
 export const APP = 'APP'
 export const APP_MENUS = 'APP_MENUS'
 export const APP_CONTAINER = 'APP_CONTAINER'
+export const CLOSE_DRAWER = 'CLOSE_DRAWER'
 export const TABLE = 'TABLE'
 export const DATA = 'DATA'
 export const RUN_PROCESS = 'RUN_PROCESS'

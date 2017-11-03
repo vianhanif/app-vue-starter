@@ -20,7 +20,7 @@
         :search="Table.search"
         class="elevation-1 white"
         >
-        <template slot="items" scope="props">
+        <template slot="items" slot-scope="props">
           <td class="text-xs-left">{{props.item.count}}</td>
           <td class="text-xs-left">{{props.item.input}}</td>
           <td class="text-xs-left">{{props.item.output}}</td>
@@ -51,7 +51,7 @@ export default {
     }
   },
   components: {
-    'home-header': require('page/collision/pages/home/components/header/app')
+    'home-header': require('page/collision/pages/home/components/header/app').default
   }
 }
 </script>

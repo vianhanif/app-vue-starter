@@ -3,6 +3,7 @@
     :title="title"
     :menus="AppMenus"
     :container='AppContainer'
+    :handler="handleDrawer"
     >
     <v-layout row wrap>
       <v-flex xs10 offset-xs1 md6 offset-md3>
@@ -40,13 +41,19 @@ export default {
       AppContainer: Action.APP_CONTAINER
     })
   },
+  methods: {
+    handleDrawer (path) {
+      this.$store.commit(Action.CLOSE_DRAWER)
+      this.$router.push(path)
+    }
+  },
   data () {
     return {
       title: config.app.title
     }
   },
   components: {
-    'app-drawer': require('components/AppDrawer/app')
+    'app-drawer': require('components/AppDrawer/app').default
   }
 }
 </script>

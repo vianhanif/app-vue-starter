@@ -30,10 +30,10 @@
 <script>
 export default {
   name: 'AppDrawer',
-  props: ['container', 'menus', 'title'],
+  props: ['container', 'menus', 'title', 'handler'],
   methods: {
     handleMenu (path) {
-      this.$router.push(path)
+      this.handler(path)
     }
   }
 }

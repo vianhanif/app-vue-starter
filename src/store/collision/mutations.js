@@ -2,6 +2,9 @@ import * as action from 'store/collision/action-types'
 import config from '@/config'
 
 export default {
+  [action.CLOSE_DRAWER] ({app}) {
+    app.container.drawer = false
+  },
   [action.ADD_SAMPLE] ({samples}, value) {
     samples.value.push(value)
   },
