@@ -11,6 +11,7 @@ Latest Node:
   stage: build
   script:
     - npm install --progress=false
+    - npm install dpl
     - npm run build
   artifacts:
     paths:
