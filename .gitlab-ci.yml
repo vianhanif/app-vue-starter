@@ -11,6 +11,7 @@ stages:
 image: node:latest
 
 Gems:
+  image: ruby:latest
   stage: dependencies
   script:
     - gem install dpl
