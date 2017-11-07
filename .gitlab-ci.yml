@@ -38,23 +38,23 @@ Firefox:
   script:
     - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
     - apt-get update
-    - apt-get install firefox
+    - apt-get install -y firefox
     - export FIREFOX_BIN=/usr/bin/firefox
     - npm run test-firefox
 
-Safari:
-  image: node:latest
-  stage: test
-  dependencies:
-    - Latest Node
-  script:
-    - wget -q -O- http://deb.playonlinux.com/public.gpg | apt-key add -
-    - wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
-    - apt-get update
-    - apt-get install -y curl p7zip-full
-    - apt-get install -y playonlinux
-    - export SAFARI_BIN=/usr/bin/playonlinux
-    - npm run test-safari
+# Safari:
+#   image: node:latest
+#   stage: test
+#   dependencies:
+#     - Latest Node
+#   script:
+#     - wget -q -O- http://deb.playonlinux.com/public.gpg | apt-key add -
+#     - wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
+#     - apt-get update
+#     - apt-get install -y curl p7zip-full
+#     - apt-get install -y playonlinux
+#     - export SAFARI_BIN=/usr/bin/playonlinux
+#     - npm run test-safari
 
 PhantomJS:
   image: node:latest
