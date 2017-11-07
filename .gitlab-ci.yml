@@ -22,21 +22,21 @@ Test on Chrome:
   stage: test
   script:
     - npm install --progress=false
-    - npm tun test-chrome
+    - npm run test-chrome
 
 Test on Firefox:
   image: node:latest
   stage: test
   script:
     - npm install --progress=false
-    - npm tun test-firefox
+    - npm run test-firefox
 
 Test on Safari:
   image: node:latest
   stage: test
   script:
     - npm install --progress=false
-    - npm tun test-safari
+    - npm run test-safari
 
 Deployment to Heroku:
   stage: deploy
