@@ -30,6 +30,19 @@ Chrome:
     - export CHROME_BIN=/usr/bin/google-chrome
     - npm run test-chrome
 
+Firefox:
+  image: node:latest
+  stage: test
+  dependencies:
+    - Latest Node
+  script:
+    - sh -c 'echo "deb http://mozilla.debian.net/ jessie-backports firefox-release" >> /etc/apt/sources.list.d/debian-mozilla.list'
+    - wget mozilla.debian.net/pkg-mozilla-archive-keyring_1.1_all.deb
+    - dpkg -i pkg-mozilla-archive-keyring_1.1_all.deb
+    - apt-get update
+    - apt-get install -t jessie-backports firefox
+    - npm run test-firefox
+
 PhantomJS:
   image: node:latest
   stage: test
