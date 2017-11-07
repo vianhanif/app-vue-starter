@@ -6,7 +6,7 @@ stages:
 variables:
   HEROKU_API_KEY: fdfad238-4533-4867-812c-3e65b1554fd3
 
-build:node:
+Latest Node:
   image: node:latest
   stage: build
   script:
@@ -21,7 +21,7 @@ Test on Chrome:
   image: node:latest
   stage: test
   dependencies:
-    - build:node
+    - Latest Node
   script:
     - npm run test-chrome
 
@@ -29,7 +29,7 @@ Test on Firefox:
   image: node:latest
   stage: test
   dependencies:
-    - build:node
+    - Latest Node
   script:
     - npm run test-firefox
 
@@ -37,7 +37,7 @@ Test on Safari:
   image: node:latest
   stage: test
   dependencies:
-    - build:node
+    - Latest Node
   script:
     - npm run test-safari
 
