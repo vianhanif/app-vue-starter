@@ -38,7 +38,7 @@ Test on Safari:
     - npm install --progress=false
     - npm run test-safari
 
-Heroku:
+Heroku: 
   stage: deploy
   environment:
     name: production
