@@ -1,10 +1,35 @@
 stages:
+  - install
   - build
   - test
   - deploy
 
 variables:
   HEROKU_API_KEY: fdfad238-4533-4867-812c-3e65b1554fd3
+
+Setup Chrome:
+  image: node:latest
+  stage: install
+  script:
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+    - apt-get update
+    - apt-get install -y google-chrome-stable
+    - export CHROME_BIN=/usr/bin/google-chrome
+
+Setup Firefox:
+  image: node:latest
+  stage: install
+  script:
+    - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
+    - apt-get update
+    - apt-get install -y apt-utils --force-yes
+    - add-apt-repository ppa:mc3man/trusty-media
+    - apt-get install -y libc6 --force-yes
+    - apt-get install -y ffmpeg gstreamer0.10-ffmpeg --force-yes
+    - apt-get install -y gtk2.0 --force-yes
+    - apt-get install -y build-essential libgtk2.0-dev --force-yes
+    - apt-get install -y firefox --force-yes
 
 Latest Node:
   image: node:latest
@@ -22,12 +47,8 @@ Chrome:
   stage: test
   dependencies:
     - Latest Node
+    - Setup Chrome
   script:
-    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-    - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-    - apt-get update
-    - apt-get install -y google-chrome-stable
-    - export CHROME_BIN=/usr/bin/google-chrome
     - npm run test-chrome
 
 Firefox:
@@ -35,14 +56,8 @@ Firefox:
   stage: test
   dependencies:
     - Latest Node
+    - Setup Firefox
   script:
-    - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
-    - apt-get update
-    - apt-get install -y apt-utils --force-yes
-    - apt-get install -y libc6 --force-yes
-    - apt-get install -y gtk2.0 --force-yes
-    - apt-get install -y build-essential libgtk2.0-dev --force-yes
-    - apt-get install -y firefox --force-yes
     - npm run test-firefox
 
 # Safari:
