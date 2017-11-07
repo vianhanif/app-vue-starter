@@ -17,7 +17,7 @@ Latest Node:
       - node_modules/
       - dist/
 
-Test on Chrome:
+Chrome:
   image: node:latest
   stage: test
   dependencies:
@@ -30,7 +30,7 @@ Test on Chrome:
     - export CHROME_BIN=/usr/bin/google-chrome
     - npm run test-chrome
 
-Test on PhantomJS:
+PhantomJS:
   image: node:latest
   stage: test
   dependencies:
