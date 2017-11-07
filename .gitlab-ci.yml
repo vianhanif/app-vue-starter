@@ -40,7 +40,7 @@ Firefox:
     - apt-get update
     - apt-get install -y libc6 --force-yes
     - apt-get install -y gtk2.0 --force-yes
-    - apt-get install build-essential libgtk2.0-dev
+    - apt-get install -y build-essential libgtk2.0-dev --force-yes
     - apt-get install -y firefox --force-yes
     - npm run test-firefox
 
