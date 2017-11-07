@@ -23,23 +23,20 @@ Test on Chrome:
   dependencies:
     - Latest Node
   script:
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+    - apt-get update
+    - apt-get install -y google-chrome-stable
+    - export CHROME_BIN=/usr/bin/google-chrome
     - npm run test-chrome
 
-Test on Firefox:
+Test on PhantonJS:
   image: node:latest
   stage: test
   dependencies:
     - Latest Node
   script:
-    - npm run test-firefox
-
-Test on Safari:
-  image: node:latest
-  stage: test
-  dependencies:
-    - Latest Node
-  script:
-    - npm run test-safari
+    - npm run test-phantomjs
 
 Heroku:
   stage: deploy
