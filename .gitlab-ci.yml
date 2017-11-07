@@ -21,7 +21,7 @@ Test on Chrome:
   image: node:latest
   stage: test
   dependencies:
-    - build:node:
+    - build:node
   script:
     - npm run test-chrome
 
@@ -29,7 +29,7 @@ Test on Firefox:
   image: node:latest
   stage: test
   dependencies:
-    - build:node:
+    - build:node
   script:
     - npm run test-firefox
 
@@ -37,7 +37,7 @@ Test on Safari:
   image: node:latest
   stage: test
   dependencies:
-    - build:node:
+    - build:node
   script:
     - npm run test-safari
 
