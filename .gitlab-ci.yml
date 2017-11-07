@@ -53,6 +53,7 @@ Safari:
     - apt-get update
     - apt-get install -y curl p7zip-full
     - apt-get install -y playonlinux
+    - export SAFARI_BIN=/usr/bin/playonlinux
     - npm run test-safari
 
 PhantomJS:
