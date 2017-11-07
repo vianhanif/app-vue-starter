@@ -40,5 +40,8 @@ Test on Safari:
 
 Deployment to Heroku:
   stage: deploy
+  environment:
+    name: production
+    url: http://collision-tester.herokuapp.com
   script:
     - dpl --provider=heroku --app=collision-tester --api-key=$HEROKU_API_KEY
