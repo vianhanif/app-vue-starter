@@ -20,25 +20,28 @@ Build:
 Test on Chrome:
   image: node:latest
   stage: test
+  dependencies:
+    - Build
   script:
-    - npm install --progress=false
     - npm run test-chrome
 
 Test on Firefox:
   image: node:latest
   stage: test
+  dependencies:
+    - Build
   script:
-    - npm install --progress=false
     - npm run test-firefox
 
 Test on Safari:
   image: node:latest
   stage: test
+  dependencies:
+    - Build
   script:
-    - npm install --progress=false
     - npm run test-safari
 
-Heroku: 
+Heroku:
   stage: deploy
   environment:
     name: production
