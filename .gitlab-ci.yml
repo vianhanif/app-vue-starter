@@ -36,11 +36,9 @@ Firefox:
   dependencies:
     - Latest Node
   script:
-    - sh -c 'echo "deb http://mozilla.debian.net/ jessie-backports firefox-release" >> /etc/apt/sources.list.d/debian-mozilla.list'
-    - wget mozilla.debian.net/pkg-mozilla-archive-keyring_1.1_all.deb
-    - dpkg -i pkg-mozilla-archive-keyring_1.1_all.deb
     - apt-get update
-    - apt-get install -t jessie-backports firefox
+    - apt-get install firefox
+    - export FIREFOX_BIN=/usr/bin/firefox
     - npm run test-firefox
 
 Safari:
