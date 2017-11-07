@@ -25,7 +25,7 @@ Modules:
     - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
     - apt-get install -y software-properties-common python-software-properties --force-yes
     - add-apt-repository ppa:mc3man/trusty-media
-    - apt-get dist-upgrade
+    - apt-get dist-upgrade -y --force-yes
     - apt-get install -y libav-tools --force-yes
     - apt-get install -y apt-utils --force-yes
     - apt-get install -y libc6 --force-yes
