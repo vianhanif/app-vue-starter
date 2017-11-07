@@ -2,45 +2,58 @@ variables:
   HEROKU_API_KEY: fdfad238-4533-4867-812c-3e65b1554fd3
 
 stages:
-  - install
+  - dependencies
+  - browser
   - build
   - test
   - deploy
 
 image: node:latest
 
-Node Modules:
-  image: node:latest
-  stage: install
+Gems:
+  stage: dependencies
   script:
-    - npm install --progress=false
+    - gem install dpl
 
-Setup Chrome:
-  stage: install
+Modules:
+  stage: dependencies
   script:
     - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
     - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
     - apt-get update
-    - apt-get install -y google-chrome-stable
-    - export CHROME_BIN=/usr/bin/google-chrome
-
-Setup Firefox:
-  stage: install
-  script:
-    - apt-get update
     - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
     - apt-get install -y software-properties-common python-software-properties --force-yes
     - add-apt-repository ppa:kirillshkrogalev/ffmpeg-next
-    - apt-get update
     - apt-get install -y apt-utils --force-yes
     - apt-get install -y libc6 --force-yes
     - apt-get install -y ffmpeg --force-yes
     - apt-get install -y gtk2.0 --force-yes
     - apt-get install -y build-essential libgtk2.0-dev --force-yes
+
+Node:
+  stage: dependencies
+  script:
+    - npm install --progress=false
+
+Setup Chrome:
+  stage: browser
+  dependencies:
+    - Modules
+  script:
+    - apt-get install -y google-chrome-stable
+    - export CHROME_BIN=/usr/bin/google-chrome
+
+Setup Firefox:
+  stage: browser
+  dependencies:
+    - Modules
+  script:
     - apt-get install -y firefox --force-yes
 
 Latest Node:
   stage: build
+  dependencies:
+    - Node
   script:
     - npm run build
   artifacts:
@@ -50,7 +63,6 @@ Latest Node:
 Chrome:
   stage: test
   dependencies:
-    - Node Modules
     - Latest Node
     - Setup Chrome
   script:
@@ -59,7 +71,6 @@ Chrome:
 Firefox:
   stage: test
   dependencies:
-    - Node Modules
     - Latest Node
     - Setup Firefox
   script:
@@ -91,6 +102,7 @@ Heroku:
   environment:
     name: production
     url: http://collision-tester.herokuapp.com
+  dependencies:
+    - Gems
   script:
-    - gem install dpl
     - dpl --provider=heroku --app=collision-tester --api-key=$HEROKU_API_KEY
