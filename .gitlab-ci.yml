@@ -17,6 +17,7 @@ Setup Chrome:
     - apt-get update
     - apt-get install -y google-chrome-stable
   cache:
+    untracked: true
     paths:
       - ./usr/bin/google-chrome
 
