@@ -57,4 +57,7 @@ Heroku:
     url: http://collision-tester.herokuapp.com
   script:
     - gem install dpl
+    - git add .
+    - git commit -m "ready to deploy"
+    - npm run deploy
     - dpl --provider=heroku --app=collision-tester --api-key=$HEROKU_API_KEY
