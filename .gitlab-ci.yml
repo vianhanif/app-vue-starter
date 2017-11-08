@@ -2,6 +2,7 @@ variables:
   HEROKU_API_KEY: fdfad238-4533-4867-812c-3e65b1554fd3
 
 stages:
+  - dependencies
   - browser
   - build
   - test
@@ -44,7 +45,7 @@ Setup Chrome:
 #     # - apt-get install -y firefox --force-yes
 
 Node Modules:
-  stage: build
+  stage: dependencies
   script:
     - npm install --progress=false
   artifacts:
