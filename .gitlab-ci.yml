@@ -47,6 +47,7 @@ Latest Node:
     - npm run build
   artifacts:
     paths:
+      - node_modules/
       - dist/
 
 Chrome:
