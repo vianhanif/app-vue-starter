@@ -46,8 +46,11 @@ Latest Node:
     - npm run build
   artifacts:
     paths:
-      - node_modules/
       - dist/
+  cache:
+    paths:
+      - ./node_modules/
+
 
 Chrome:
   stage: test
