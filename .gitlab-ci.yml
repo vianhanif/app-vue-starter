@@ -15,7 +15,7 @@ Gems:
   stage: dependencies
   artifacts:
     paths:
-      - ci/deploy
+      - ci/
   script:
     - gem install dpl
 
@@ -23,7 +23,7 @@ Modules:
   stage: dependencies
   artifatcs:
     paths:
-      - ci/deploy/
+      - ci/
   script:
     - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
     - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
@@ -43,7 +43,7 @@ Node:
   stage: dependencies
   artifatcs:
     paths:
-      - ci/deploy/
+      - ci/
   script:
     - npm install --progress=false
 
