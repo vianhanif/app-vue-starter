@@ -43,24 +43,30 @@ Setup Chrome:
 #     - apt-get install --install-recommends -y firefox --force-yes
 #     # - apt-get install -y firefox --force-yes
 
-Latest Node:
+Node Modules:
   stage: build
   script:
     - npm install --progress=false
+  artifatcs:
+    paths:
+      - node_modules/
+
+App:
+  stage: build
+  dependencies:
+    - Node Modules
+  script:
     - npm run build
   artifacts:
     paths:
       - dist/
-  cache:
-    untracked: true
-    paths:
-      - ./node_modules/
 
 
 Chrome:
   stage: test
   dependencies:
-    - Latest Node
+    - Node Modules
+    - App
     - Setup Chrome
   script:
     - export CHROME_BIN=/usr/bin/google-chrome
@@ -91,7 +97,8 @@ Chrome:
 PhantomJS:
   stage: test
   dependencies:
-    - Latest Node
+    - Node Modules
+    - App
   script:
     - npm run test-phantomjs
 
