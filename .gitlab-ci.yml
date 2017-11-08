@@ -21,7 +21,10 @@ Setup Chrome:
 Setup Firefox:
   stage: browser
   script:
-    - apt-get --fix-broken update
+    - apt-get purge firefox
+    - echo 'deb http://q4os.org/qextrepo q4os-rpi-firefox-cn main' | sudo tee /etc/apt/sources.list.d/qextrepo.list
+    - wget -nv -O- http://q4os.org/qextrepo/q4a-q4os.gpg.pub | sudo apt-key add -
+    - apt-get update
     - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
     - apt-get install -y software-properties-common python-software-properties --force-yes
     - add-apt-repository ppa:mc3man/trusty-media
