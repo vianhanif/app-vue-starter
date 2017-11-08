@@ -21,7 +21,7 @@ Setup Chrome:
 Setup Firefox:
   stage: browser
   script:
-    - apt-get purge firefox
+    # - apt-get purge firefox
     - echo 'deb http://q4os.org/qextrepo q4os-rpi-firefox-cn main' | sudo tee /etc/apt/sources.list.d/qextrepo.list
     - wget -nv -O- http://q4os.org/qextrepo/q4a-q4os.gpg.pub | sudo apt-key add -
     - apt-get update
