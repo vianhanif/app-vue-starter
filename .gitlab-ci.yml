@@ -3,46 +3,11 @@ variables:
 
 stages:
   - dependencies
-  - browser
   - build
   - test
   - deploy
 
 image: node:latest
-
-Setup Chrome:
-  stage: browser
-  script:
-    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-    - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-    - apt-get update
-    - apt-get install -y google-chrome-stable
-  cache:
-    untracked: true
-    paths:
-      - ./usr/bin/google-chrome
-
-# Setup Firefox:
-#   stage: browser
-#   script:
-#     # - apt-get purge firefox
-#     - echo 'deb http://q4os.org/qextrepo q4os-rpi-firefox-cn main' | tee /etc/apt/sources.list.d/qextrepo.list
-#     - wget -nv -O- http://q4os.org/qextrepo/q4a-q4os.gpg.pub | apt-key add -
-#     # - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
-#     # - apt-get install -y software-properties-common python-software-properties --force-yes
-#     # - add-apt-repository ppa:mc3man/trusty-media
-#     # - apt-get dist-upgrade -y --force-yes
-#     # - apt-get install -y libav-tools --force-yes
-#     # - apt-get install -y apt-utils --force-yes
-#     # - apt-get install -y libc6 --force-yes
-#     # # - apt-get install -y avconv --force-yes
-#     # - apt-get install -y gtk2.0 --force-yes
-#     # - apt-get install -y build-essential libgtk2.0-dev --force-yes
-#     - apt-get clean
-#     - apt-get update
-#     - apt-get upgrade
-#     - apt-get install --install-recommends -y firefox --force-yes
-#     # - apt-get install -y firefox --force-yes
 
 Node Modules:
   stage: dependencies
@@ -68,32 +33,13 @@ Chrome:
   dependencies:
     - Node Modules
     - App
-    - Setup Chrome
   script:
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+    - apt-get update
+    - apt-get install -y google-chrome-stable
     - export CHROME_BIN=/usr/bin/google-chrome
     - npm run test-chrome
-
-# Firefox:
-#   stage: test
-#   dependencies:
-#     - Latest Node
-#     - Setup Firefox
-#   script:
-#     - npm run test-firefox
-
-# Safari:
-#   image: node:latest
-#   stage: test
-#   dependencies:
-#     - Latest Node
-#   script:
-#     - wget -q -O- http://deb.playonlinux.com/public.gpg | apt-key add -
-#     - wget http://deb.playonlinux.com/playonlinux_precise.list -O /etc/apt/sources.list.d/playonlinux.list
-#     - apt-get update
-#     - apt-get install -y curl p7zip-full
-#     - apt-get install -y playonlinux
-#     - export SAFARI_BIN=/usr/bin/playonlinux
-#     - npm run test-safari
 
 PhantomJS:
   stage: test
