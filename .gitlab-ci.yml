@@ -22,7 +22,6 @@ Setup Firefox:
   stage: browser
   script:
     # - apt-get purge firefox
-    - apt-get update
     - echo 'deb http://q4os.org/qextrepo q4os-rpi-firefox-cn main' | tee /etc/apt/sources.list.d/qextrepo.list
     - wget -nv -O- http://q4os.org/qextrepo/q4a-q4os.gpg.pub | apt-key add -
     # - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
@@ -35,8 +34,9 @@ Setup Firefox:
     # # - apt-get install -y avconv --force-yes
     # - apt-get install -y gtk2.0 --force-yes
     # - apt-get install -y build-essential libgtk2.0-dev --force-yes
-    # - apt-get update
-    - apt-get install -y firefox --force-yes
+    - apt-get update
+    - apt-get install --install-recommends -y firefox --force-yes
+    # - apt-get install -y firefox --force-yes
 
 Latest Node:
   stage: build
