@@ -16,6 +16,9 @@ Setup Chrome:
     - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
     - apt-get update
     - apt-get install -y google-chrome-stable
+  cache:
+    paths:
+      - ./usr/bin/google-chrome
 
 # Setup Firefox:
 #   stage: browser
@@ -48,8 +51,9 @@ Latest Node:
     paths:
       - dist/
   cache:
+    untracked: true
     paths:
-      - ./node_modules/
+      - node_modules/
 
 
 Chrome:
