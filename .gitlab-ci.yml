@@ -47,7 +47,7 @@ Node Modules:
   stage: build
   script:
     - npm install --progress=false
-  artifatcs:
+  artifacts:
     paths:
       - node_modules/
 
