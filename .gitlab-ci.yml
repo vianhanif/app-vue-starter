@@ -61,5 +61,5 @@ Heroku:
     - git config user.name "Alvian Rahman Hanif"
     - git add .
     - git commit -m "ready to deploy"
-    - npm run deploy
+    - git subtree push --prefix dist/ heroku master
     # - dpl --provider=heroku --app=collision-tester --api-key=$HEROKU_API_KEY
