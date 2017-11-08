@@ -22,9 +22,9 @@ Setup Firefox:
   stage: browser
   script:
     # - apt-get purge firefox
+    - apt-get update
     - echo 'deb http://q4os.org/qextrepo q4os-rpi-firefox-cn main' | tee /etc/apt/sources.list.d/qextrepo.list
     - wget -nv -O- http://q4os.org/qextrepo/q4a-q4os.gpg.pub | apt-key add -
-    - apt-get update
     - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
     - apt-get install -y software-properties-common python-software-properties --force-yes
     - add-apt-repository ppa:mc3man/trusty-media
