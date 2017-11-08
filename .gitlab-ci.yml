@@ -50,6 +50,7 @@ PhantomJS:
     - npm run test-phantomjs
 
 Heroku:
+  image: ruby:latest
   stage: deploy
   environment:
     name: production
