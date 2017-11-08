@@ -2,7 +2,6 @@ variables:
   HEROKU_API_KEY: fdfad238-4533-4867-812c-3e65b1554fd3
 
 stages:
-  - dependencies
   - browser
   - build
   - test
@@ -10,56 +9,12 @@ stages:
 
 image: node:latest
 
-Gems:
-  image: ruby:latest
-  stage: dependencies
-  script:
-    - gem install dpl
-
-Modules:
-  stage: dependencies
-  script:
-    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-    - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-    - apt-get update
-    - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
-    - apt-get install -y software-properties-common python-software-properties --force-yes
-    - add-apt-repository ppa:mc3man/trusty-media
-    - apt-get dist-upgrade -y --force-yes
-    - apt-get install -y libav-tools --force-yes
-    - apt-get install -y apt-utils --force-yes
-    # - apt-get install -y libc6 --force-yes
-    # - apt-get install -y avconv --force-yes
-    - apt-get install -y gtk2.0 --force-yes
-    - apt-get install -y build-essential libgtk2.0-dev --force-yes
-
-Node:
-  stage: dependencies
-  script:
-    - npm install --progress=false
-
-Setup Chrome:
-  stage: browser
-  dependencies:
-    - Modules
-  script:
-    - apt-get update
-    - apt-get install -y google-chrome-stable
-    - export CHROME_BIN=/usr/bin/google-chrome
-
-Setup Firefox:
-  stage: browser
-  dependencies:
-    - Modules
-  script:
-    - apt-get update
-    - apt-get install -y firefox --force-yes
-
 Latest Node:
   stage: build
   dependencies:
     - Node
   script:
+    - npm install --progress=false
     - npm run build
   artifacts:
     paths:
