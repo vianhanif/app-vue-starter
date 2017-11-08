@@ -61,6 +61,6 @@ Heroku:
     - git config user.name "Alvian Rahman Hanif"
     - git add .
     - git commit -m "ready to deploy"
-    - git remote add heroku https://git.heroku.com/collision-tester.git
-    - git subtree push --prefix dist/ heroku master
-    # - dpl --provider=heroku --app=collision-tester --api-key=$HEROKU_API_KEY
+    # - git remote add heroku https://git.heroku.com/collision-tester.git
+    # - git subtree push --prefix dist/ heroku master
+    - dpl --provider=heroku --app=collision-tester --api-key=$HEROKU_API_KEY
