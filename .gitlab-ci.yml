@@ -21,7 +21,7 @@ Setup Chrome:
 Setup Firefox:
   stage: browser
   script:
-    - apt-get -f update
+    - apt-get --fix-broken update
     - sh -c 'echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list'
     - apt-get install -y software-properties-common python-software-properties --force-yes
     - add-apt-repository ppa:mc3man/trusty-media
