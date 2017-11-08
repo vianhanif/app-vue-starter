@@ -62,4 +62,4 @@ Heroku:
     - git add .
     - git commit -m "ready to deploy"
     - npm run deploy
-    - dpl --provider=heroku --app=collision-tester --api-key=$HEROKU_API_KEY
+    # - dpl --provider=heroku --app=collision-tester --api-key=$HEROKU_API_KEY
