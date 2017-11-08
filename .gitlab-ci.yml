@@ -15,6 +15,9 @@ Gems:
   stage: dependencies
   script:
     - gem install dpl
+  artifatcs:
+    paths:
+      - */
 
 Modules:
   stage: dependencies
@@ -32,11 +35,17 @@ Modules:
     # - apt-get install -y avconv --force-yes
     - apt-get install -y gtk2.0 --force-yes
     - apt-get install -y build-essential libgtk2.0-dev --force-yes
+  artifatcs:
+    paths:
+      - */
 
 Node:
   stage: dependencies
   script:
     - npm install --progress=false
+  artifatcs:
+    paths:
+      - */
 
 Setup Chrome:
   stage: browser
