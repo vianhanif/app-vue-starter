@@ -13,17 +13,11 @@ image: node:latest
 Gems:
   image: ruby:latest
   stage: dependencies
-  artifacts:
-    paths:
-      - ci/
   script:
     - gem install dpl
 
 Modules:
   stage: dependencies
-  artifatcs:
-    paths:
-      - ci/
   script:
     - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
     - sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
@@ -34,16 +28,13 @@ Modules:
     - apt-get dist-upgrade -y --force-yes
     - apt-get install -y libav-tools --force-yes
     - apt-get install -y apt-utils --force-yes
-    - apt-get install -y libc6 --force-yes
-    # - apt-get install -y avconv --force-yes
+    # - apt-get install -y libc6 --force-yes
+    - apt-get install -y avconv --force-yes
     - apt-get install -y gtk2.0 --force-yes
     - apt-get install -y build-essential libgtk2.0-dev --force-yes
 
 Node:
   stage: dependencies
-  artifatcs:
-    paths:
-      - ci/
   script:
     - npm install --progress=false
 
@@ -52,6 +43,7 @@ Setup Chrome:
   dependencies:
     - Modules
   script:
+    - apt-get update
     - apt-get install -y google-chrome-stable
     - export CHROME_BIN=/usr/bin/google-chrome
 
@@ -60,17 +52,18 @@ Setup Firefox:
   dependencies:
     - Modules
   script:
+    - apt-get update
     - apt-get install -y firefox --force-yes
 
 Latest Node:
   stage: build
-  artifacts:
-    paths:
-      - dist/
   dependencies:
     - Node
   script:
     - npm run build
+  artifacts:
+    paths:
+      - dist/
 
 Chrome:
   stage: test
