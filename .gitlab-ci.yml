@@ -13,11 +13,11 @@ image: node:latest
 Gems:
   image: ruby:latest
   stage: dependencies
+  artifacts:
+    paths:
+      - ci/deploy
   script:
     - gem install dpl
-  artifatcs:
-    paths:
-      - ci/deploy/
 
 Modules:
   stage: dependencies
