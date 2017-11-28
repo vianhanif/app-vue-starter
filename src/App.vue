@@ -8,6 +8,11 @@
 
 export default {
   name: 'App',
+  metaInfo () {
+    return {
+      title: this.$route.name
+    }
+  },
   data () {
     return {
 

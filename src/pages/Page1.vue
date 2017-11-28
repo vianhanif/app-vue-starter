@@ -21,11 +21,6 @@ import * as actions from 'store/todos/type/actions'
 
 export default {
   name: 'Page1',
-  head: {
-    title: {
-      inner: 'Page 1'
-    }
-  },
   computed: {
     ...mapGetters({ ...getters })
   },

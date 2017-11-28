@@ -1,14 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import VueHead from 'vue-head'
+import VueMeta from 'vue-meta'
 import Main from 'page/Main'
 import Page1 from 'page/Page1'
 
 Vue.use(Router)
-Vue.use(VueHead, {
-  separator: '-',
-  complement: 'Vue App Starter'
-})
+Vue.use(VueMeta)
 
 export default new Router({
   routes: [

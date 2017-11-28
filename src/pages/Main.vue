@@ -7,11 +7,6 @@ import Hello from 'components/Hello/app'
 
 export default {
   name: 'Main',
-  head: {
-    title: {
-      inner: 'Home'
-    }
-  },
   data () {
     return {
 
