@@ -27,9 +27,9 @@
     "node-gyp": "^3.6.2",
     "sha1": "^1.1.1",
     "vue": "^2.5.13",
-    "vue-head": "^2.0.11",
+    "vue-head": "^2.0.12",
     "vue-router": "^3.0.1",
-    "vuetify": "^0.17.6",
+    "vuetify": "^0.17.7",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -57,7 +57,7 @@
     "eslint-plugin-html": "^4.0.2",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
