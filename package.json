@@ -92,7 +92,7 @@
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.7",
     "semver": "^5.5.0",
-    "sinon": "^4.4.2",
+    "sinon": "^4.4.3",
     "sinon-chai": "^3.0.0",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
