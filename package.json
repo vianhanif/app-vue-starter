@@ -29,7 +29,7 @@
     "vue": "^2.5.16",
     "vue-head": "^2.0.12",
     "vue-router": "^3.0.1",
-    "vuetify": "^1.0.14",
+    "vuetify": "^1.0.15",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
