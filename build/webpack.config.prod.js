@@ -77,6 +77,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       name: 'vendor',
       minChunks: 2
     },
+    minimize: true,
     noEmitOnErrors: true,
     concatenateModules: true
   }
