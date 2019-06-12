@@ -2,6 +2,7 @@
 
 > Vue App Starter with Vuex Store Setup Todo Example
 <!-- commit 1 -->
+<!-- commit 2 -->
 ## Build Setup
 
 > you may use npm or yarn
