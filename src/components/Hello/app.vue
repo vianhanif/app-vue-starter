@@ -6,13 +6,13 @@
     <router-link :to="'/page1/'+name">Go to Page 1 </router-link>
     <h2>Essential Links</h2>
     <ul v-if="seen">
-      <li v-for="link in links.essential">
+      <li v-for="(link, index) in links.essential" :key="index">
         <a v-bind:href="link.href" target="_blank">{{link.text}}</a>
       </li>
     </ul>
     <h2>Ecosystem</h2>
     <ul>
-      <li v-for="link in links.ecosystem">
+      <li v-for="(link, index) in links.ecosystem" :key="index">
         <a v-bind:href="link.href" target="_blank">{{link.text}}</a>
       </li>
     </ul>
