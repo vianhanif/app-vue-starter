@@ -16,7 +16,7 @@
     "save": "git push origin"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "es6-promise": "^4.2.4",
     "jquery": "^3.4.1",
     "js-sha256": "^0.9.0",
